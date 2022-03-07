@@ -1,16 +1,22 @@
 # Mapping semantic spaces for translation
 
-In this tutorial, you will map from a small English semantic space to a Catalan semantic space. You may need a Catalan dictionary for the following exercises. Here's a good one: *https://www.diccionaris.cat/*.
+## Requirements
+
+You'll need the scipy package to run the code in this repo. If you need to install it on your system, do:
+
+    sudo pip install scipy
 
 
 ### Pen and paper exercise
+
+In this tutorial, you will map from a small English semantic space to a Catalan semantic space. You may need a Catalan dictionary for the following exercises. Here's a good one: *https://www.diccionaris.cat/*.
 
 The following are two toy semantic spaces, one for English, one for Catalan. Rows represent vectors, columns represent dimensions.
 
 <table>
 <tr><td></td><td>nature</td><td>argue</td></tr>
-<tr><td>horse</td><td>0.3</td><td>0.0</td></tr>
-<tr><td>dog</td><td>0.3</td><td>0.0</td></tr>
+<tr><td>horse</td><td>0.5</td><td>0.0</td></tr>
+<tr><td>dog</td><td>0.7</td><td>0.0</td></tr>
 <tr><td>house</td><td>0.2</td><td>0.1</td></tr>
 <tr><td>parliament</td><td>0.0</td><td>0.7</td></tr>
 <tr><td>politics</td><td>0.1</td><td>0.9</td></tr>
@@ -41,7 +47,7 @@ Which of those two Catalan words do you think is the translation of *green* acco
 <table>
 <tr><td></td><td>lluitar</td><td>arbre</td></tr>
 <tr><td>verd</td><td>0.1</td><td>0.5</td></tr>
-<tr><td>vermell</td><td>0.2</td><td>0.1</td></tr>
+<tr><td>vermell</td><td>0.2</td><td>0.2</td></tr>
 </table>
 
 
@@ -84,6 +90,21 @@ The system then gives the precision @ *k*, where *k* is the number of nearest ne
 Run your system for different values of *--ncomps* and *--nns*. Write your results in a table. Check that the results are what you expected.
 
 Now, looking at the verbose output, what can you say about the system's errors? Do they confirm the hypotheses you made when looking at the semantic spaces?
+
+
+## Write up your experiments
+
+Write a little report of what you've done (again, this is just practice for the exam!) Your report should contain the following sections:
+
+* Description of the task and data.
+* Your hypothesis: here, it could simply be how you expected the number of principal components to affect results.
+* The experiments you ran: which range of hyperparameters did you try (*ncomps* and *nns*)? 
+* Results: insert the little table showing your results and discuss it with respect to your hypothesis.
+
+
+## For those wanting to do a tiny bit of coding...
+
+Automatize your hyperparameter search. Write a loop in *plsr_regression.py* that automatically tries different values of *ncomps* without you having to manually feed the hyperparameter to the system.
 
 
 ### Open-ended project
