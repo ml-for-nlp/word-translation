@@ -1,7 +1,6 @@
 import numpy as np
 from math import sqrt
 from matplotlib import cm
-import pandas as pd
 from sklearn.decomposition import PCA
 
 def readDM(dm_file):
@@ -47,29 +46,6 @@ def neighbours(dm_dict,vec,n):
             break
     return neighbours
 
-
-def make_figure(m_2d, labels):
-    cmap = cm.get_cmap('nipy_spectral')
-
-    existing_m_2d = pd.DataFrame(m_2d)
-    existing_m_2d.index = labels
-    existing_m_2d.columns = ['PC1','PC2']
-    existing_m_2d.head()
-
-    ax = existing_m_2d.plot(kind='scatter', x='PC2', y='PC1', figsize=(30,18), c=range(len(existing_m_2d)), colormap=cmap, linewidth=0, legend=False)
-    ax.set_xlabel("A dimension of meaning")
-    ax.set_ylabel("Another dimension of meaning")
-
-    for i, word in enumerate(existing_m_2d.index):
-        #print(word+" "+str(existing_m_2d.iloc[i].PC2)+" "+str(existing_m_2d.iloc[i].PC1))
-        ax.annotate(
-            word,
-            (existing_m_2d.iloc[i].PC2, existing_m_2d.iloc[i].PC1), color='black', size='large', textcoords='offset points')
-
-    fig = ax.get_figure()
-    return fig
-
-
 def run_PCA(dm_dict, words, savefile):
     m = []
     labels = []
@@ -83,4 +59,5 @@ def run_PCA(dm_dict, words, savefile):
     cax = png.get_axes()[1]
     cax.set_visible(False)
     png.savefig(savefile)
+
 
