@@ -75,7 +75,7 @@ Running the code will split the data into training and test set, train a PLSR mo
 
     python3 -W ignore plsr_regression.py --ncomps=<n> --nns=<n> [-v | --verbose]
 
-where --ncomps is the number of principal components to use in your analysis, and --nns is the number of nearest neighbours to compute your precision at *k* nearest neighbours. For instance, you might try:
+where --ncomps is the number of principal components to use in your analysis, and --nns is the number of nearest neighbours to compute your precision at *k*. For instance, you might try:
 
     python3 -W ignore plsr_regression.py --ncomps=10 --nns=5
 
@@ -107,7 +107,7 @@ Write a little report of what you've done (again, this is just practice for the 
 Automatize your hyperparameter search. Write a loop in *plsr_regression.py* that automatically tries different values of *ncomps* without you having to manually feed the hyperparameter to the system.
 
 
-### Open-ended project
+## Open-ended project
 
 There is a small Italian semantic space in the data/ folder, with 1000 frequent Italian words. You can try and build the regression for a new train/test set for Italian! You will need to manually select the words you want in your training /test sets, and extract their English equivalents from en.subset.dm.
 
