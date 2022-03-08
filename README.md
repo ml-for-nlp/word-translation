@@ -2,9 +2,9 @@
 
 ## Requirements
 
-You'll need the scipy package to run the code in this repo. If you need to install it on your system, do:
+You'll need the scikit-learn package to run the code in this repo. If you need to install it on your system, do:
 
-    sudo pip install scipy
+    sudo pip install sklearn
 
 
 ### Pen and paper exercise
